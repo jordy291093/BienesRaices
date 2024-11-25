@@ -1,0 +1,71 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.categoria {
+    @include m.grid(1, 2rem);
+    margin: 6rem 0;
+
+    &__contenedor {
+        @include m.contenedor;
+    }
+
+    &__informes {
+        @include m.grid(1, 3rem);
+
+        @include m.tablet {
+            @include m.grid(2, 3rem);
+        }
+    }
+
+    &__heading {
+        margin: 0;
+        color: v.$gris-oscuro;
+    }
+
+    &__descripcion {
+        margin: 0;
+        text-align: left;
+    }
+
+    &__grid {
+        background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.7)),  url(../img/hogar.jpg), image-set(url(../img/hogar.avif) 1x, url(../img/hogar.webp) 1x, url(../img/hogar.jpg) 1x);
+        background-size: 100% 100%;
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        height: 80vh;
+    }
+
+    &__casa,
+    &__flex {
+        display: flex;
+        gap: 3rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__flex {
+        padding: 2rem 3rem;
+        border: solid 1px v.$gris-claro;
+        border-radius: 20rem;
+        backdrop-filter: blur(1.2rem);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    &__titulo {
+        margin: 0;
+        color: v.$gris-claro;
+    }
+
+    &__info {
+        color: v.$gris-claro;
+    }
+
+    &__enlace {
+        @include m.boton(v.$gris-claro, v.$gris-oscuro);
+    }
+}
